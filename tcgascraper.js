@@ -439,21 +439,18 @@
     },
 
     parseResults : function parseResults(resp){
-      var tableTemplate = "<table class='table'><thead><tr></tr></thead><tbody><tr></tr></tbody></table>";
-      if (typeof resp === "number") {
-        $("#message").addClass("alert-success").text("Successfully added this many triples: "+resp);
-      }
-      else if (typeof resp === 'object' && resp.length > 0) {
+      var tableTemplate = "<table class='table table-condensed table-bordered><thead><tr></tr></thead><tbody><tr></tr></tbody></table>";
+      if (typeof resp === 'object') {
         $("#results").html(tableTemplate);
-        var labels = Object.keys(resp[0]),
+        var labels = resp.head.vars,
             $heads = $("#results table thead tr").first(),
             $body = $("#results table tbody");
         labels.forEach(function(label){
           $heads.append($("<th>").text(label));
         });
-        resp.forEach(function(row){
+        resp.results.bindings.forEach(function(row){
           var $rowhtml = $("<tr>");
-          labels.forEach(function(label){
+          labels.forEach(function(label, index){
             $rowhtml.append($("<td>").text(row[label].value));
           });
           $body.append($rowhtml);
