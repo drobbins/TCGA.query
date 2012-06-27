@@ -79,12 +79,12 @@
     init : function init(){
 
       //Initialize the RDF Store
-      rdfstore.connect("lib/rdf_store.js", function(success, store){
-        store.registerDefaultProfileNamespaces();
-        store.registerDefaultNamespace("tcga", "http://tcga.github.com/#");
-        Scraper.store = store;
-        console.log("RDF Store ready.");
-      });
+      //rdfstore.connect("lib/rdf_store.js", function(success, store){
+      //  store.registerDefaultProfileNamespaces();
+      //  store.registerDefaultNamespace("tcga", "http://tcga.github.com/#");
+      //  Scraper.store = store;
+      //  console.log("RDF Store ready.");
+      //});
 
       //Initialize the File System
       window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
@@ -98,19 +98,10 @@
       $("#query").submit(function(e){
         var query = $("#sparql", this).val();
         if(query !== ""){
-          try {
-            Scraper.store.execute(query, function(succ, resp){
-              if(!succ){
-                Scraper.postMessage("error", "Unable to execute query: " + query);
-              }
-              else {
-                Scraper.parseResults(resp);
-              }
-            });
-          }
-          catch (e){
-            Scraper.postMessage("error", "Unable to execute query: " + query);
-          }
+          TCGA.hub.query(query, function (err, sparqlResult) {
+            if (err) Scraper.postMessage("error", ["Unable to execute query", err]);
+            else Scraper.parseResults(sparqlResult);
+          });
         }
         return false;
       });
