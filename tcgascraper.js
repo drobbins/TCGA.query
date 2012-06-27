@@ -439,7 +439,7 @@
     },
 
     parseResults : function parseResults(resp){
-      var tableTemplate = "<table class='table table-condensed table-bordered><thead><tr></tr></thead><tbody><tr></tr></tbody></table>";
+      var tableTemplate = "<table class='table table-condensed table-bordered'><thead><tr></tr></thead><tbody><tr></tr></tbody></table>";
       if (typeof resp === 'object') {
         $("#results").html(tableTemplate);
         var labels = resp.head.vars,
