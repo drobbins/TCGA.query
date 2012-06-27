@@ -1,0 +1,43 @@
+<p>
+  <div class="btn-group">
+    <button class="btn" data-toggle="collapse" data-target="#schema-types">Types</button>
+    <button class="btn" data-toggle="collapse" data-target="#other-properties">Properties</button>
+    <button class="btn" data-toggle="collapse" data-target="#file-properties">File Only Properties</button>
+  </div>
+</p>
+<div id="schema-types" class="collapse in">
+  <p>See the <a href="https://wiki.nci.nih.gov/display/TCGA/TCGA+Data+Primer">TCGA Data Primer</a> and <a href="https://tcga-data.nci.nih.gov/datareports/codeTablesReport.htm?codeTable=center">Code Tables</a> for details on these types.</p>
+  <ul>
+    <li>tcga:disease-study</li>
+    <li>tcga:center-type</li>
+    <li>tcga:center-domain</li>
+    <li>tcga:platform</li>
+    <li>tcga:data-type</li>
+    <li>tcga:archive</li>
+    <li>tcga:file</li>
+  </ul>
+</div>
+<div id="other-properties" class="collapse">
+  <p>All classes have the following properties</p>
+  <ul>
+    <li>rdfs:label</li>
+    <li>rdf:type</li>
+    <li>tcga:url</li>
+    <li>tcga:date-modified</li>
+  </ul>
+</div>
+<div id="file-properties" class="collapse">
+  <p>Files have the following properties</p>
+  <ul>
+    <li>rdfs:label</li>
+    <li>rdf:type</li>
+    <li>tcga:url</li>
+    <li>tcga:date-modified</li>
+    <li>tcga:disease-study</li>
+    <li>tcga:center-type</li>
+    <li>tcga:center-domain</li>
+    <li>tcga:platform</li>
+    <li>tcga:data-type</li>
+    <li>tcga:archive</li>
+  </ul>
+</div>
