@@ -19,8 +19,8 @@
       executeQuery : function (e) {
         var query = editor.getValue();
         if(query !== ""){
-          TCGA.hub.query(query, function (err, sparqlResult) {
-            if (err) TCGA.toast.error("Unable to complete query");
+          TCGA.find(query, function (err, sparqlResult) {
+            if (err) TCGA.ui.toast.error("Unable to complete query");
             else Query.displayResults(sparqlResult);
           });
         }
@@ -50,7 +50,7 @@
     };
 
     // Register Tab
-    TCGA.registerTab({
+    TCGA.ui.registerTab({
       id : 'sparql',
       title : 'SPARQL',
       content : '<div class="page-header"><h1>TCGA SPARQL Interface</h1></div><div class="row"><div class="span8"><form class="sparql-query"><textarea id="query" rows="5"></textarea><button type="submit" class="btn btn-primary">Submit Query</button></form></div><div class="help span4"><h3>Schema Overview</h3></div></div><div id="results"></div>',
