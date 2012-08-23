@@ -2,8 +2,8 @@
 
   TCGA.loadScript({
     registerModules : false,
-    scripts : [ 'http://codemirror.net/lib/codemirror.js',
-                'http://codemirror.net/mode/sparql/sparql.js'],
+    scripts : [ 'https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js',
+                'https://raw.github.com/marijnh/CodeMirror/master/mode/sparql/sparql.js'],
   }, function () {
 
     $("<link>")
