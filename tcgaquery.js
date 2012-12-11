@@ -3,12 +3,12 @@
   TCGA.loadScript({
     registerModules : false,
     scripts : [ 'https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js',
-                'https://raw.github.com/marijnh/CodeMirror/master/mode/sparql/sparql.js'],
+                'https://raw.github.com/marijnh/CodeMirror/master/mode/sparql/sparql.js']
   }, function () {
 
     $("<link>")
       .attr('rel', 'stylesheet')
-      .attr('href', 'https://dl.dropbox.com/u/4000409/Repos/TCGA-Query/codemirror.css')
+      .attr('href', 'https://dl.dropbox.com/u/4000409/Repos/TCGA.query/codemirror.css')
       .attr('type', 'text/css')
       .appendTo("head");
 
