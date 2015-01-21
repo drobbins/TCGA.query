@@ -2,13 +2,13 @@
 
   TCGA.loadScript({
     registerModules : false,
-    scripts : [ 'https://raw.github.com/marijnh/CodeMirror/master/lib/codemirror.js',
-                'https://raw.github.com/marijnh/CodeMirror/master/mode/sparql/sparql.js']
+    scripts : [ '//cdnjs.cloudflare.com/ajax/libs/codemirror/4.11.0/codemirror.min.js',
+                '//cdnjs.cloudflare.com/ajax/libs/codemirror/4.11.0/mode/sparql/sparql.min.js']
   }, function () {
 
     $("<link>")
       .attr('rel', 'stylesheet')
-      .attr('href', 'https://dl.dropbox.com/u/4000409/Repos/TCGA.query/codemirror.css')
+      .attr('href', 'http://drobbins.github.io/TCGA.query/codemirror.css')
       .attr('type', 'text/css')
       .appendTo("head");
 
